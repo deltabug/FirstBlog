@@ -10,17 +10,12 @@
 			<h1><a href="/">Tamsin's Blog</a></h1>
 		</div>
 
-		<div>
-			<p>Published: 15.09.2018</p>
-			<h2><a href="">First Post</a></h2>
-			<p>This is a post. It's exiting and amazing and awesome</p>
-		</div>
-
-
-		<div>
-			<p>Published: 15.09.2018</p>
-			<h2><a href="">Second Post</a></h2>
-			<p>and another post of near equal amazingness</p>
-		</div>
+        {% for post in posts %}
+        	<div>
+        		<p>published: {{ post.published_date }}</p>
+        		<h1><a href="">{{ post.title }}</a></h1>
+        		<p>{{ post.text|linebreaksbr }}</p>
+        	</div>
+        {% endfor %}
 	</body>
 </html>
